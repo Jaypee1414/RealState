@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <body>
+    <header class="py-3">
+      <div class="w-full h-20 flex items-center justify-between px-10">
+        <img
+          src="//img1.wsimg.com/isteam/ip/067a4d42-19e8-46d9-9bed-578bf62dd44e/blob-6c0c2e0.png/:/rs=h:167,cg:true,m/qt=q:95"
+          alt=""
+          class="w-40 lg:w-56"
+        />
+
+        <ul class="hidden md:flex gap-6 space-x-4">
+          <li>Home</li>
+          <li>Listing</li>
+          <li>Let's Move</li>
+          <li>About us</li>
+        </ul>
+
+        <div class="hidden md:block">
+          <button class="bg-[#c9db45] text-[#232323] px-8 py-2" id="whatsappButton">
+            <i class="fa-solid fa-phone px-2"></i>(206) 919-6886
+          </button>
+        </div>
+
+        <button id="menuToggle" class="md:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div
+        id="sidebar"
+        class="fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-50"
+      >
+        <div class="flex justify-between items-center p-4 border-b">
+          <button id="closeSidebar" class="text-[#232323]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <ul class="flex flex-col gap-4 p-4 text-[#232323]">
+          <li>Home</li>
+          <li>Listing</li>
+          <li>Let's Move</li>
+          <li>About us</li>
+        </ul>
+        <div class="p-4">
+          <button class="bg-[#c9db45] w-full py-2 text-[#232323]">
+            <i class="fa-solid fa-phone-volume px-2"></i>Call now
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="backdrop"
+        class="hidden fixed inset-0 bg-black bg-opacity-50 z-40"
+      ></div>
+    </header>
+
+    <section
+      id="hero"
+      class="relative w-full h-[100vh] bg-center bg-cover flex flex-col justify-center items-center text-white text-center transition-all duration-1000"
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+      <div class="relative z-10 px-6">
+        <h2 class="text-4xl md:text-6xl font-bold mb-4">
+          <span
+            class="text-[#c9db45] font-cursive italic block text-3xl md:text-5xl mb-2"
+            >MARCI METZGER - THE RIDGE REALTY GROUP</span
+          >
+          Pahrump Realtor
+        </h2>
+        <button
+          class="bg-[#c9db45] text-[#232323] px-8 py-2 mt-4 text-slate-900 px-6 py-3 roundedhover:text-black"
+        >
+          Learn More
+        </button>
+      </div>
+
+      <div class="absolute top-1/2 left-0 transform -translate-y-1/2 z-20">
+        <button id="prev" class="text-white hover:bg-opacity-80 p-3 rounded-r">
+          &#10094;
+        </button>
+      </div>
+      <div class="absolute top-1/2 right-0 transform -translate-y-1/2 z-20">
+        <button id="next" class="text-white hover:bg-opacity-80 p-3 rounded-l">
+          &#10095;
+        </button>
+      </div>
+    </section>
+
+    <section class="bg-white py-16 px-6 md:px-20">
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+      >
+        <div>
+          <p class="text-sm font-semibold uppercase text-slate-600 mb-4">
+            Welcome to Marci J Metzger Homes
+          </p>
+          <h1
+            class="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-6"
+          >
+            Marci was a REALTOR, then licensed Broker, in Washington State. Now,
+            she is enjoying the sunshine, and helping clients in Southern
+            Nevada. Having helped buyers and sellers in many markets since 1995,
+            she is a wealth of knowledge.
+          </h1>
+          <p class="text-slate-600 mb-8">
+            "I love that small-town feeling that our community offers.
+            Spectacular golf courses, parks, pool, and easy access to Las Vegas
+            make Pahrump a great place to call home. Working or retired,
+            fast-paced or looking to relax... there's a place for you here! I
+            enjoy living in the Mountain Falls community and will strive to find
+            you a home that will suit you just as this community does me."
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="#"
+              class="bg-[#cada47] text-[#13254f] px-6 py-3 rounded font-medium hover:bg-slate-800 transition"
+            >
+              Our Services
+            </a>
+            <a
+              href="#"
+              class="bg-[#13254f] text-white px-6 py-3 rounded font-medium hover:bg-slate-800 transition"
+            >
+              Current Listing
+            </a>
+          </div>
+        </div>
+
+        <div class="shadow-lg rounded-md overflow-hidden">
+          <img
+            src="https://img1.wsimg.com/isteam/ip/067a4d42-19e8-46d9-9bed-578bf62dd44e/Marci%201.jpg/:/cr=t:12.9%25,l:27.78%25,w:48.08%25,h:32.04%25/rs=w:365,h:365,cg:true,m"
+            alt="Modern kitchen interior"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="bg-[#13254f] h-20 lg:h-56 relative">
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white flex space-x-4 md:space-x-16 lg:space-x-24"
+        >
+          <img
+            src="//img1.wsimg.com/isteam/ip/067a4d42-19e8-46d9-9bed-578bf62dd44e/BIG%20CIRCLE%202.png/:/rs=h:100,cg:true,m"
+            alt="Big Circle Logo"
+            class="w-10 h-10 lg:w-20 lg:h-20 object-contain"
+            loading="lazy"
+          />
+          <img
+            src="//img1.wsimg.com/isteam/ip/067a4d42-19e8-46d9-9bed-578bf62dd44e/Equal%20Housing%20Logo.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=h:100,cg:true"
+            alt="Equal Housing Logo"
+            class="w-10 h-10 lg:w-20 lg:h-20 object-contain"
+            loading="lazy"
+          />
+          <img
+            src="//img1.wsimg.com/isteam/ip/067a4d42-19e8-46d9-9bed-578bf62dd44e/Realtor%20Pin.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=h:100,cg:true"
+            alt="Realtor Pin"
+            class="w-10 h-10 lg:w-20 lg:h-20 object-contain"
+            loading="lazy"
+          />
+          <img
+            src="//img1.wsimg.com/isteam/ip/067a4d42-19e8-46d9-9bed-578bf62dd44e/Chamber.jpg/:/rs=h:100,cg:true,m"
+            alt="Chamber Logo"
+            class="w-10 h-10 lg:w-20 lg:h-20 object-contain"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto text-center">
+      <h4 class="text-sm font-semibold text-blue-900 uppercase mb-2">
+        Our Services
+      </h4>
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6">
+        Your Full-Service Property Partner
+      </h2>
+      <p class="text-gray-600 max-w-3xl mx-auto mb-12">
+        At Marci Metzger Homes We specialize in helping clients buy, sell, and
+        invest in residential and commercial properties with confidence and
+        ease. Our team offers personalized guidance, market insights, and expert
+        negotiation to ensure you get the best value. Whether you're a
+        first-time homebuyer, a seasoned investor, or looking to sell your
+        property, we're here to support you every step of the way. With a deep
+        understanding of the local market and a commitment to excellence, we
+        turn real estate goals into reality.
+      </p>
+
+      <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Card 1 -->
+        <div class="text-left">
+          <img
+            src="//img1.wsimg.com/isteam/stock/12792/:/rs=w:365,h:365,cg:true,m/cr=w:365,h:365"
+            alt="Bespoke New Builds"
+            class="rounded-lg shadow-md mb-4 w-full h-auto"
+          />
+          <h3 class="text-lg font-semibold text-blue-900 mb-2">
+            Real Estate Done Right
+          </h3>
+          <p class="text-gray-600">
+            Nervous about your property adventure? Don’t be. Whether you're
+            getting ready to buy or sell your residence, looking at investment
+            properties, or just curious about the markets, our team ensures you
+            get the best experience possible!
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="text-left">
+          <img
+            src="//img1.wsimg.com/isteam/stock/43920/:/rs=w:365,h:365,cg:true,m/cr=w:365,h:365"
+            alt="Tailored Home Extensions"
+            class="rounded-lg shadow-md mb-4 w-full h-auto"
+          />
+          <h3 class="text-lg font-semibold text-blue-900 mb-2">
+            Commercial & Residential
+          </h3>
+          <p class="text-gray-600">
+            Large or small, condo or mansion, we can find it and get at the
+            price that's right. Fixer-uppers? Luxury? We can help with all of
+            it! We live, work, and play in this community. Happy to help you
+            find where to put you hard-earned dollars.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="text-left">
+          <img
+            src="//img1.wsimg.com/isteam/stock/kayaJdA/:/rs=w:365,h:365,cg:true,m/cr=w:365,h:365"
+            alt="Innovative Loft Conversions"
+            class="rounded-lg shadow-md mb-4 w-full h-auto"
+          />
+          <h3 class="text-lg font-semibold text-blue-900 mb-2">
+            Rely on Expertise
+          </h3>
+          <p class="text-gray-600">
+            If you have questions about affordability, credit, and loan options,
+            trust us to connect you with the right people to get the answers you
+            need in a timely fashion. We make sure you feel confident and
+            educated every step of the way.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <!-- Hero Background with Overlay -->
+      <div
+        class="relative h-[60rem] lg:h-[36rem] bg-cover bg-center"
+        style="background-image: url('//img1.wsimg.com/isteam/stock/107924/:/')"
+      >
+        <div
+          class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center px-4 text-center"
+        >
+          <h1 class="text-white text-3xl md:text-5xl font-bold mb-6">
+            Find Your Dream Home
+          </h1>
+
+          <!-- Search Form Card -->
+          <div
+            class="bg-white w-full max-w-6xl rounded-lg shadow-2xl p-6 md:p-10"
+          >
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6">
+              Search Listings
+            </h2>
+
+            <form class="space-y-6">
+              <!-- First Row -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Location</label
+                  >
+                  <select class="w-full border rounded px-3 py-2">
+                    <option>Any</option>
+                    <option>New York</option>
+                    <option>Los Angeles</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Type</label
+                  >
+                  <select class="w-full border rounded px-3 py-2">
+                    <option>Any</option>
+                    <option>House</option>
+                    <option>Apartment</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Sort By</label
+                  >
+                  <select class="w-full border rounded px-3 py-2">
+                    <option>Newest</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Second Row -->
+              <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Bedrooms</label
+                  >
+                  <select class="w-full border rounded px-3 py-2">
+                    <option>Any Number</option>
+                    <option>1+</option>
+                    <option>2+</option>
+                    <option>3+</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Baths</label
+                  >
+                  <select class="w-full border rounded px-3 py-2">
+                    <option>Any Number</option>
+                    <option>1+</option>
+                    <option>2+</option>
+                    <option>3+</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Min Price</label
+                  >
+                  <input
+                    type="text"
+                    class="w-full border rounded px-3 py-2"
+                    placeholder="$0"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Max Price</label
+                  >
+                  <input
+                    type="text"
+                    class="w-full border rounded px-3 py-2"
+                    placeholder="$1,000,000"
+                  />
+                </div>
+
+                <div class="flex items-end">
+                  <button
+                    type="submit"
+                    class="w-full bg-[#142452] hover:bg-[#142452] text-white font-semibold py-2 rounded-full transition"
+                  >
+                    Search Now
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+        <section class="max-w-7xl mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+              
+              <!-- Left Text Content -->
+              <div>
+                <h2 class="text-3xl font-bold text-[#1a2a60] mb-4">We’d Love to Hear from You.</h2>
+                <p class="text-gray-700 mb-6">
+                    At Marci Metzger Homes, we're dedicated to guiding you every step of the way in your real estate journey. Whether you're buying, selling, or simply exploring your options, our team is here to listen, answer your questions, and offer a free consultation tailored to your needs.
+                </p>
+        
+                <h3 class="text-xl font-semibold text-[#1a2a60] mt-20">Stay Connected with Us</h3>
+                <div class="flex space-x-4">
+                  <a href="https://www.instagram.com/marciandlauren_nvrealtors/" class="bg-pink-600 hover:bg-pink-700 text-white px-3 py-2 rounded">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a href="https://www.facebook.com/MarciHomes/" class="bg-[#3b5998] hover:bg-[#2d4373] text-white px-3 py-2 rounded">
+                    <i class="fa-brands fa-facebook"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/in/marci-metzger-30642496/" class="bg-violet-600 hover:bg-violet-700
+                  text-white px-3 py-2 rounded">
+                    <i class="fa-brands fa-linkedin"></i>
+                  </a>
+                  <a href="https://www.yelp.com/biz/marci-metzger-the-ridge-realty-pahrump" class="bg-fuchsia-600 hover:bg-fuchsia-700
+                  text-white px-3 py-2 rounded">
+                    <i class="fa-brands fa-yelp"></i>
+                  </a>
+                </div>
+              </div>
+        
+              <!-- Right Form -->
+              <form class="space-y-4">
+                <input type="text" placeholder="Name" class="w-full p-3 border border-gray-300 bg-gray-100 rounded">
+                <input type="text" placeholder="Phone" class="w-full p-3 border border-gray-300 bg-gray-100 rounded">
+                <input type="email" placeholder="Email" class="w-full p-3 border border-gray-300 bg-gray-100 rounded">
+                <input type="text" placeholder="Address with Postcode" class="w-full p-3 border border-gray-300 bg-gray-100 rounded">
+                <textarea rows="4" placeholder="Message" class="w-full p-3 border border-gray-300 bg-gray-100 rounded"></textarea>
+                <button type="submit" class="w-full bg-lime-400 hover:bg-lime-500 text-[#1a2a60] font-bold py-3 rounded">SUBMIT</button>
+              </form>
+            </div>
+          </section>
+    </section>
+
+    <footer class="bg-[#13254f] text-gray-100 py-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+          <!-- Column 1: Logo or Icon -->
+          <div>
+            <p class="text-gray-400 mb-8">Creating dream homes and memorable spaces with quality and care.</p>
+            <ul class="space-y-2 text-gray-400">
+                <li><a href="#" class="hover:text-white"><span class="text-lg font-semibold text-white">Address: </span>3190 HW-160, Suite F, Pahrump, Nevada 89048, United States</a></li>
+                <li><a href="#" class="hover:text-white" id=""><span class="text-lg font-semibold text-white">Telephone:</span> (206) 919-6886</a></li>
+              </ul>
+          </div>
+      
+          <!-- Column 2: About / Quick Links -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white">About Us</a></li>
+              <li><a href="#" class="hover:text-white">Contact</a></li>
+              <li><a href="#" class="hover:text-white">Our Team</a></li>
+              <li><a href="#" class="hover:text-white">Blog</a></li>
+              <li><a href="#" class="hover:text-white">Careers</a></li>
+            </ul>
+          </div>
+      
+          <!-- Column 3: Services -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Services</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white">Custom Homes</a></li>
+              <li><a href="#" class="hover:text-white">Renovations</a></li>
+              <li><a href="#" class="hover:text-white">Real Estate</a></li>
+              <li><a href="#" class="hover:text-white">Consulting</a></li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="text-center text-gray-500 text-sm mt-8">
+          &copy; 2025 Marci METZGER Homes - All Rights Reserved
+        </div>
+      </footer>
+      
+  </body>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const sidebar = document.getElementById("sidebar");
+    const closeSidebar = document.getElementById("closeSidebar");
+    const backdrop = document.getElementById("backdrop");
+
+    menuToggle.addEventListener("click", () => {
+      sidebar.classList.remove("-translate-x-full");
+      backdrop.classList.remove("hidden");
+    });
+
+    closeSidebar.addEventListener("click", () => {
+      sidebar.classList.add("-translate-x-full");
+      backdrop.classList.add("hidden");
+    });
+
+    backdrop.addEventListener("click", () => {
+      sidebar.classList.add("-translate-x-full");
+      backdrop.classList.add("hidden");
+    });
+  </script>
+  <script>
+    const heroSection = document.getElementById("hero");
+    const images = [
+      "//img1.wsimg.com/isteam/stock/107924/:/",
+      "//img1.wsimg.com/isteam/stock/107927/:/",
+      "//img1.wsimg.com/isteam/stock/43920/:/",
+    ];
+
+    let current = 0;
+
+    function updateBackground(index) {
+      heroSection.style.backgroundImage = `url('${images[index]}')`;
+    }
+
+    document.getElementById("prev").addEventListener("click", () => {
+      current = (current - 1 + images.length) % images.length;
+      updateBackground(current);
+    });
+
+    document.getElementById("next").addEventListener("click", () => {
+      current = (current + 1) % images.length;
+      updateBackground(current);
+    });
+
+    setInterval(() => {
+      current = (current + 1) % images.length;
+      updateBackground(current);
+    }, 3000);
+
+    // Initial load
+    updateBackground(current);
+  </script>
+  <script>
+    document.getElementById("whatsappButton").addEventListener("click", function () {
+      // Format: https://wa.me/<countrycode><number> — No spaces or dashes
+    window.location.href = "https://wa.me/12069196886";
+    });
+  </script>
+</html>
